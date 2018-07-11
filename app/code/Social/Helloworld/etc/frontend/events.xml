@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="social_helloworld_display_text">
+        <observer name="social_display_text" instance="Social\Helloworld\Observer\ChangeDisplayText" />
+    </event>
+</config>
