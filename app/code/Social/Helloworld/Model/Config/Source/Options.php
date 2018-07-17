@@ -8,6 +8,7 @@ class Options extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
 { 
     public function getAllOptions()
     {
+        
         $this->_options = [ 
             ['label'=>'', 'value'=>''],
             ['label'=>'Small', 'value'=>'1'],
