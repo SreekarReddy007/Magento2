@@ -1,0 +1,8 @@
+<?php
+echo $block->socialShare();
+echo"<br>";
+echo "Current page Url : ".$this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
+echo"<br>";
+//calling the block,created from backend
+echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('welcomeblock')->toHtml();
+
