@@ -21,6 +21,7 @@ class Model extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
 		$post = $this->_sampleFactory->create();
+		
 		$collection = $post->getCollection();
 		foreach($collection as $item){
 			echo "<pre>";

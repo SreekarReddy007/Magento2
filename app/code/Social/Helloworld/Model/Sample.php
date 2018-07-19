@@ -25,3 +25,4 @@ class Sample extends \Magento\Framework\Model\AbstractModel implements \Magento\
 		return $values;
 	}
 }
+
