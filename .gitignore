@@ -92,6 +92,3 @@ app/functions.php
 app/etc
 app/design/frontend/default/modern/template
 .gitignore
-
-
-Add CommentCollapse 

@@ -68,6 +68,7 @@ class Data extends \Magento\Framework\App\Action\Action
 			//  $post->delete();
 			//  $post->save();
 		  exit();
+		  
 		return $this->_pageFactory->create();
 	}
 }
