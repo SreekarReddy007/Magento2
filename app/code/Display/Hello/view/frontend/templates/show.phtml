@@ -1,12 +1,12 @@
- <!-- < ?php
+ <?php
 $categoryCollection = $block->getCategoryCollection();
 foreach ($categoryCollection as $category) {
     // print_r($category->getName());   
     echo "<a href=".$category->getUrl().">".$category->getName()."</a>";
     echo "<br>";
 }
-  ?> -->
-<style>
+  ?>
+<!-- <style>
 table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
 td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
 tr:nth-child(even) { background-color: #dddddd; }
@@ -17,7 +17,7 @@ tr:nth-child(even) { background-color: #dddddd; }
   <tr>
     <th>CategoriesName</th>
   </tr>
-    <?php
+    < ?php
     $categoryCollection = $block->getCategoryCollection();
         foreach ($categoryCollection as $category){
             echo "<tr>";
@@ -25,5 +25,5 @@ tr:nth-child(even) { background-color: #dddddd; }
                 echo "</tr>";
         }
     ?>
-</table>
+</table> -->
 

@@ -1,64 +1,5 @@
 <?php
 namespace Social\Helloworld\Setup;
-  
-use Magento\Eav\Setup\EavSetup;
-use Magento\Eav\Setup\EavSetupFactory;
-use Magento\Framework\Setup\InstallDataInterface;
-use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Eav\Model\Config;
-  
-class InstallData implements InstallDataInterface
-{
-    private $eavSetupFactory;
-  
-    public function __construct(EavSetupFactory $eavSetupFactory, Config $eavConfig)
-    {
-        $this->eavSetupFactory = $eavSetupFactory;
-        $this->eavConfig = $eavConfig;
-    }
-  
-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-    {
-        $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
-  
-        $eavSetup->addAttribute(
-            \Magento\Catalog\Model\Product::ENTITY,
-            'my_custom_size',
-            [
-                'group' => 'general',
-                'type' => 'int',
-                'backend' => '',
-                'frontend' => '',
-                'label' => 'Select Size',
-                'input' => 'select',
-                'note' => 'My Custom Size',
-                'class' => '',
-                'source' => 'Social\Helloworld\Model\Config\Source\Options',
-                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
-                'visible' => true,
-                'required' => false,
-                'user_defined' => true,
-                'default' => '0',
-                'searchable' => false,
-                'filterable' => false,
-                'comparable' => false,
-                'visible_on_front' => true,
-                'used_in_product_listing' => true,
-                'unique' => false,
-                'option' => [ 
-                    'values' => [],
-                ]
-            ]    
-        );  
-    }
-}
-?>
-
-
-
-<!-- < ?php
-namespace Social\Helloworld\Setup;
 
 use Magento\Customer\Setup\CustomerSetupFactory;
 use Magento\Customer\Model\Customer;
@@ -114,9 +55,72 @@ class InstallData implements InstallDataInterface
        ->addData([
            'attribute_set_id' => $attributeSetId,
            'attribute_group_id' => $attributeGroupId,
-           'used_in_forms' => ['adminhtml_customer','adminhtml_customer_address', 'customer_address_edit', 'customer_register_address'],//you can use other forms also ['adminhtml_customer_address', 'customer_address_edit', 'customer_register_address']
+           'used_in_forms' => ['adminhtml_customer','adminhtml_customer_address', 'customer_address_edit', 'customer_register_address','customer_account_create'],//you can use other forms also ['adminhtml_customer_address', 'customer_address_edit', 'customer_register_address']
        ]);
        
        $attribute->save();
    }
-} -->
+} 
+?>
+
+
+
+
+<!-- < ?php
+namespace Social\Helloworld\Setup;
+  
+use Magento\Eav\Setup\EavSetup;
+use Magento\Eav\Setup\EavSetupFactory;
+use Magento\Framework\Setup\InstallDataInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Eav\Model\Config;
+  
+class InstallData implements InstallDataInterface
+{
+    private $eavSetupFactory;
+  
+    public function __construct(EavSetupFactory $eavSetupFactory, Config $eavConfig)
+    {
+        $this->eavSetupFactory = $eavSetupFactory;
+        $this->eavConfig = $eavConfig;
+    }
+  
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
+  
+        $eavSetup->addAttribute(
+            \Magento\Catalog\Model\Product::ENTITY,
+            'my_custom_size',
+            [
+                'group' => 'general',
+                'type' => 'int',
+                'backend' => '',
+                'frontend' => '',
+                'label' => 'Select Size',
+                'input' => 'select',
+                'note' => 'My Custom Size',
+                'class' => '',
+                'source' => 'Social\Helloworld\Model\Config\Source\Options',
+                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
+                'visible' => true,
+                'required' => false,
+                'user_defined' => true,
+                'default' => '0',
+                'searchable' => false,
+                'filterable' => false,
+                'comparable' => false,
+                'visible_on_front' => true,
+                'used_in_product_listing' => true,
+                'unique' => false,
+                'option' => [ 
+                    'values' => [],
+                ]
+            ]    
+        );  
+    }
+}
+?> -->
+
+
