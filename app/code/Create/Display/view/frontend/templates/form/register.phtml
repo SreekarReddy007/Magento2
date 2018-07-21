@@ -1,6 +1,6 @@
 <h1>Registration page</h1>
 
-<form action="<?php echo $block->getFormAction() ?>" method="post">
+<form action="<?= $block->escapeUrl($block->getPostActionUrl()) ?> " method="post">
     <label>First Name : </label>
     <input name="firstname" type="text" required>
     <label>Last Name : </label>
@@ -11,3 +11,6 @@
     <input name="Phone no" type="tel" required>
     <button type="submit">Submit</button>
 </form>
+ <!-- < ?php 
+ echo $block->getText() ;
+?>  -->

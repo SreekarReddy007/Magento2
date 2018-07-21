@@ -44,7 +44,7 @@ class InstallData implements InstallDataInterface
            'type' => 'varchar',
            'label' => 'Mobile Number',
            'input' => 'text',
-           'required' => true,
+           'required' => false,
            'visible' => true,
            'user_defined' => true,
            'position' =>999,
