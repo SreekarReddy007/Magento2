@@ -6,9 +6,9 @@ class Edit extends \Magento\Contact\Controller\Index\Post
 {
  public function execute()
  {
- $this->messageManager->addSuccess('Message from Controller.');
+ $this->messageManager->addSuccess('Message from Controller,Overriden');
  echo"hello";
-  //return parent::execute();
+  return parent::execute();
  exit;
 
  }

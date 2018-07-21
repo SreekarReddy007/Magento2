@@ -7,8 +7,13 @@ use Magento\Customer\Model\Session;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Context;
 
-class Customer extends \Magento\Customer\Controller\AbstractAccount
+class Create extends \Magento\Customer\Controller\AbstractAccount
 {
+    
+    protected $registration;
+    protected $session;
+    protected $resultPageFactory;
+
     public function __construct(
         Context $context,
         Session $customerSession,
@@ -21,13 +26,17 @@ class Customer extends \Magento\Customer\Controller\AbstractAccount
         parent::__construct($context);
     }
 
-   
+    /**
+     * Customer register form page
+     *
+     * @return \Magento\Framework\Controller\Result\Redirect|\Magento\Framework\View\Result\Page
+     */
     public function execute()
     {
         if ($this->session->isLoggedIn() || !$this->registration->isAllowed()) {
             /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
             $resultRedirect = $this->resultRedirectFactory->create();
-            $resultRedirect->setPath('');
+            $resultRedirect->setPath('*/*');
             return $resultRedirect;
         }
 
@@ -37,11 +46,7 @@ class Customer extends \Magento\Customer\Controller\AbstractAccount
     }
 }
 
-
 ?>
-
-
-
 
 
 
