@@ -14,7 +14,7 @@ class CustomerLogout implements ObserverInterface
         echo"<br>";
         echo "logout time ".date('h:i:s a', time());;
         // echo ($date = $this->date->gmtDate());
-        exit;
+        //exit;
     }
 }
 

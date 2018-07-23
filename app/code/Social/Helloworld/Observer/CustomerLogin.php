@@ -8,10 +8,10 @@ class CustomerLogin implements ObserverInterface
 {
     public function execute(\Magento\Framework\Event\Observer $observer)
     {      
-        echo "Customer Name : ";
-        $customer = $observer->getEvent()->getCustomer();
-        echo ucfirst($customer->getName()); //Get customer name
-        exit;
+        // echo "Customer Name : ";
+        // $customer = $observer->getEvent()->getCustomer();
+        // echo ucfirst($customer->getName()); //Get customer name
+        // exit;
     }
 }
 

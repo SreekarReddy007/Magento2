@@ -7,7 +7,7 @@ use Magento\Customer\Model\AccountManagement;
 
 class Register extends \Magento\Directory\Block\Data
 {
-    
+   
     protected $_customerSession;
 
    
@@ -58,8 +58,8 @@ class Register extends \Magento\Directory\Block\Data
      * @return $this
      */
     protected function _prepareLayout()
-    {
-        $this->pageConfig->getTitle()->set(__('Create New Customer Account'));
+    { echo"Block Overide";
+        $this->pageConfig->getTitle()->set(__('Create New Customer Account .Block Overide'));
         return parent::_prepareLayout();
     }
 
@@ -93,7 +93,7 @@ class Register extends \Magento\Directory\Block\Data
      * @return mixed
      */
     public function getFormData()
-    {
+    {  
         $data = $this->getData('form_data');
         if ($data === null) {
             $formData = $this->_customerSession->getCustomerFormData(true);
