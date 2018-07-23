@@ -58,8 +58,9 @@ class Register extends \Magento\Directory\Block\Data
      * @return $this
      */
     protected function _prepareLayout()
-    { echo"Block Overide";
-        $this->pageConfig->getTitle()->set(__('Create New Customer Account .Block Overide'));
+    { 
+        $this->pageConfig->getTitle()->set(__('Create New Customer Account .'));
+        echo"Block Overide";
         return parent::_prepareLayout();
     }
 

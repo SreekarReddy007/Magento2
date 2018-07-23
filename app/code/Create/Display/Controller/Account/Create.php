@@ -1,5 +1,9 @@
 <?php
-
+/**
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 namespace Create\Display\Controller\Account;
 
 use Magento\Customer\Model\Registration;
@@ -9,11 +13,27 @@ use Magento\Framework\App\Action\Context;
 
 class Create extends \Magento\Customer\Controller\AbstractAccount
 {
-    
+    /**
+     * @var \Magento\Customer\Model\Registration
+     */
     protected $registration;
+
+    /**
+     * @var Session
+     */
     protected $session;
+
+    /**
+     * @var PageFactory
+     */
     protected $resultPageFactory;
 
+    /**
+     * @param Context $context
+     * @param Session $customerSession
+     * @param PageFactory $resultPageFactory
+     * @param Registration $registration
+     */
     public function __construct(
         Context $context,
         Session $customerSession,
@@ -32,7 +52,7 @@ class Create extends \Magento\Customer\Controller\AbstractAccount
      * @return \Magento\Framework\Controller\Result\Redirect|\Magento\Framework\View\Result\Page
      */
     public function execute()
-    {
+    { 
         if ($this->session->isLoggedIn() || !$this->registration->isAllowed()) {
             /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
             $resultRedirect = $this->resultRedirectFactory->create();
@@ -46,10 +66,8 @@ class Create extends \Magento\Customer\Controller\AbstractAccount
     }
 }
 
+
 ?>
-
-
-
 
 
 
