@@ -16,9 +16,10 @@ class Edit extends Action
  
    public function execute()
    {  
+    //    echo"hello";exit();
        $resultPage = $this->resultPageFactory->create();
        return $resultPage;
-      //$this->redirect('crud/index/update');
+      $this->redirect('crud/index/update');
    }
 }
 

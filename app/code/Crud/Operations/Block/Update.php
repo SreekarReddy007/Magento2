@@ -3,7 +3,7 @@ namespace Crud\Operations\Block;
 use Crud\Operations\Model\HelloFactory;
 class Update extends \Magento\Framework\View\Element\Template
 {    
-    protected $_modelHelloFactory;
+    protected $_helloFactory;
     protected $helloCollectionFactory;
         
     public function __construct(
@@ -23,14 +23,16 @@ class Update extends \Magento\Framework\View\Element\Template
         return $this->_storeManager->getStore()->getBaseUrl();
 	}
 	public function getFormAction()
-    {
-        return 'crud/index/edit';
+    { 
+        // echo"hello";exit();
+        return'crud/index/update';
     }
     public function getHelloCollection()
     {   
         $id = $this->getRequest()->getParam('id');
         $collection = $this->_helloCollectionFactory->create();
         $collection = $collection->load($id);
+       
         return $collection;
     }
 }

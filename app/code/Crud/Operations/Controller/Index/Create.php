@@ -36,10 +36,10 @@ class Create extends Action
         // echo"$fname";
 		
 		// Inserting data into table.
-        $post->setData("fname",$fname);
-        $post->setData("lname",$lname);
-        $post->setData("email", $email);
-        $post->setData("mob",$mob);
+        $post->setFname($fname);
+        $post->setLname($lname);
+        $post->setEmail($email);
+        $post->setMob($mob);
 		$post->save();
         
         $this->messageManager->addSuccess(__('Thanks for Reaching Us ! We will Contact Soon!!!'));

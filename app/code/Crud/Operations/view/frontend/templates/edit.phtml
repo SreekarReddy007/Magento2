@@ -1,6 +1,7 @@
 <?php
 echo "<h2>All Customers</h2>";
-$collection = $block->getDataCollection();
+$collection = $block->getHelloCollection();
+// echo"$collection";
 ?>
 <!doctype HTML>
 <html>
@@ -10,14 +11,14 @@ $collection = $block->getDataCollection();
 	<body>
 		<form action=<?php echo $block->getBaseUrl();?><?php echo $block->getFormAction();?> method= "POST" id="form-validate">
 			<label>First Name : </label></br>
-			<input type="hidden" name="post_id"id="post_id" value="<?php echo $data->getId()?>" required/></br>
-			<input type="text" name="fname" id="fname" value="<?php echo $data->getId()?>" required/></br>
+			<input type="hidden" name="post_id" id="post_id" value="<?php echo $collection->getId(); ?>" required/></br>
+			<input type="text" name="fname" id="fname" value="<?php echo $collection->getFname(); ?>"  required/></br>
 			<label>Last Name : </label></br>
-			<input type="text" name="lname" id="lname" value="<?php echo $data->getId()?>" required/></br>
+			<input type="text" name="lname" id="lname" value="<?php echo $collection->getLname(); ?>" required/></br>
 			<label>Email : </label></br>
-			<input type="email" name="email" id="email" value="<?php echo $data->getId()?>" required/></br>
+			<input type="email" name="email" id="email" value="<?php echo $collection->getEmail(); ?>" required/></br>
 			<label>Mobile No : </label></br>
-			<input type="tel" name="mob" id="mob" value="<?php echo $data->getId()?>" required/></br>
+			<input type="tel" name="mob" id="mob" value="<?php echo $collection->getMob(); ?>" required/></br>
 			<button type="submit" value="Submit">Submit</button>
 			 <a href=<?php echo $block->getBaseUrl()?>crud/index/view>View</a></br>
 		</form>
